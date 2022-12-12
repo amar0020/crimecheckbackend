@@ -26,7 +26,7 @@ router.use("/user",createUser)
 
 const connect = require("./src/config/db");
 
-const port =  process.env.PORT || 8000;
+const port =  process.env.PORT || 8080;
 
 app.get("/" , async (req,res)=>{
   res.send("working")
@@ -34,7 +34,7 @@ app.get("/" , async (req,res)=>{
 
 app.listen(port, async () => {
     try {
-      await connect();
+      await connect;
       console.log(`listening to port ${port}`);
     } 
     catch (error) {
